@@ -1,0 +1,58 @@
+/* TasksComponent.css */
+
+/* Container styles */
+.tasks-container {
+    max-width: 600px;
+    margin: auto;
+  }
+  
+  /* Heading styles */
+  h2 {
+    color: #333;
+  }
+  
+  /* Task list styles */
+  ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  li {
+    margin-bottom: 10px;
+  }
+  
+  /* Button styles */
+  button {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    border: none;
+    cursor: pointer;
+    margin-left: 5px;
+  }
+  
+  button:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Add New Task section styles */
+  .add-task-section {
+    margin-top: 20px;
+  }
+  
+  h3 {
+    color: #333;
+  }
+  
+  input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+  }
+  
+  /* Optional: Add a border to input fields on focus */
+  input:focus {
+    border: 1px solid #007bff;
+    outline: none;
+  }
+  
