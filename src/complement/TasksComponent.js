@@ -9,14 +9,15 @@ const TasksComponent = () => {
   const [newTaskTitle, setNewTaskTitle] = useState("");
   const [newTaskDescription, setNewTaskDescription] = useState("");
 
+
   useEffect(() => {
-    // Fetch tasks from the server after component mounts
+ 
     const fetchTasks = async () => {
       try {
         const response = await axios.get("http://localhost:3001/tasks", {
-          // Include the token in the request headers for authentication
+   
           headers: {
-            Authorization: `Bearer ${token}`, // Adjust as needed
+            Authorization: `Bearer ${token}`, 
           },
         });
         setTasks(response.data);
@@ -26,7 +27,7 @@ const TasksComponent = () => {
     };
 
     fetchTasks();
-  }, [tasks,newTaskTitle,newTaskDescription]); // Empty dependency array ensures that this effect runs only once after mount
+  }, [tasks]); 
 
   const handleAddTask = async () => {
     try {
@@ -129,7 +130,10 @@ const TasksComponent = () => {
           value={newTaskDescription}
           onChange={(e) => setNewTaskDescription(e.target.value)}
         />
+        <div>
         <button onClick={handleAddTask}>Add Task</button>
+        </div>
+     
       </div>
     </div>
   );

@@ -43,6 +43,9 @@ const RegistrationComponent = () => {
           Login
         </Link>
       )}
+              <Link to="/" className="link-to-tasks">
+         Login
+        </Link>
     </div>
   );
 };

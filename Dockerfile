@@ -1,7 +1,7 @@
 # Use an official runtime as a parent image
-FROM node:14 as build-stage
+FROM node:14
 
-# Set the working directory
+# Set the working directory in the container
 WORKDIR /usr/src/app
 
 # Copy package.json and package-lock.json to the working directory
@@ -10,20 +10,11 @@ COPY package*.json ./
 # Install app dependencies
 RUN npm install
 
-# Copy the rest of the application code to the working directory
+# Copy the app files to the working directory
 COPY . .
 
-# Build the application
-RUN npm run build
-
-# Use a lighter-weight image for the production build
-FROM nginx:alpine
-
-# Copy the build files to the nginx web root directory
-COPY --from=build-stage /usr/src/app/build /usr/share/nginx/html
-
-# Expose the port the app will run on
+# Expose the port the app runs on
 EXPOSE 3000
 
-# Command to run the nginx server
-CMD ["nginx", "-g", "daemon off;"]
+# Define the command to run your app
+CMD ["npm", "start"]

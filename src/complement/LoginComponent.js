@@ -1,8 +1,8 @@
 // LoginComponent.js
 import React, { useState } from "react";
 import axios from "axios";
-import { Link, useNavigate } from "react-router-dom";
-import "../css/LoginComponent.css"; // Import the CSS file
+import { Link } from "react-router-dom";
+import "../css/LoginComponent.css"; 
 
 export let token = '';
 
@@ -47,6 +47,9 @@ const LoginComponent = () => {
           Task Page
         </Link>
       )}
+        <Link to="/register" className="link-to-tasks">
+         Register
+        </Link>
     </div>
   );
 };
