@@ -1,7 +1,6 @@
-
 import React, { useState } from "react";
 import axios from "axios";
-import "../css/RegistrationComponent.css"; 
+import "../css/RegistrationComponent.css";
 import { Link } from "react-router-dom";
 
 const RegistrationComponent = () => {
@@ -35,7 +34,10 @@ const RegistrationComponent = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
+      <div>
       <button onClick={handleRegister}>Register</button>
+      </div>
+
       {!username && !password ? (
         ""
       ) : (
@@ -43,9 +45,9 @@ const RegistrationComponent = () => {
           Login
         </Link>
       )}
-              <Link to="/" className="link-to-tasks">
-         Login
-        </Link>
+      <Link to="/" className="link-to-tasks">
+        Login
+      </Link>
     </div>
   );
 };

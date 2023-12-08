@@ -2,9 +2,9 @@
 import React, { useState } from "react";
 import axios from "axios";
 import { Link } from "react-router-dom";
-import "../css/LoginComponent.css"; 
+import "../css/LoginComponent.css";
 
-export let token = '';
+export let token = "";
 
 const LoginComponent = () => {
   const [username, setUsername] = useState("");
@@ -39,7 +39,10 @@ const LoginComponent = () => {
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
-      <button onClick={handleLogin}>Login</button>
+      <div>
+        <button onClick={handleLogin}>Login</button>
+      </div>
+
       {!data ? (
         ""
       ) : (
@@ -47,9 +50,9 @@ const LoginComponent = () => {
           Task Page
         </Link>
       )}
-        <Link to="/register" className="link-to-tasks">
-         Register
-        </Link>
+      <Link to="/register" className="link-to-tasks">
+        Register
+      </Link>
     </div>
   );
 };
